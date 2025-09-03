@@ -109,6 +109,10 @@ function Groupbox:AddDropdown(label, callback, options)
     return MachoMenuDropDown(self._group, label, callback, table.unpack(options))
 end
 
+function Groupbox:AddToggle(label, on_enabled, on_disabled)
+    return MachoMenuCheckbox(self._group, label, on_enabled, on_disabled)
+end
+
 function Groupbox:AddLabel(text)
     MachoMenuText(self._group, text)
 end
