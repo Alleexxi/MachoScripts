@@ -1,0 +1,208 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: Arial, sans-serif;
+}
+.menu-container {
+  width: 350px;
+  background: rgba(25, 25, 25, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  padding-bottom: 16px;
+  overflow: hidden;
+}
+.menu-title {
+  background: rgba(15, 15, 15, 0.95);
+  padding: 18px 24px 10px 24px;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  letter-spacing: 1px;
+}
+.menu-list {
+  padding: 0;
+}
+.menu-item {
+  position: relative;
+  width: 100%;
+  min-height: 32px;
+  padding: 12px 32px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.1em;
+  color: #fff;
+  background: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.menu-item.selected {
+  background: rgba(255, 105, 180, 0.25);
+  color: #fff;
+}
+.menu-item-back {
+  color: #aaa;
+  font-style: italic;
+}
+.menu-item-left {
+  float: left;
+  text-align: left;
+}
+.menu-item-right {
+  float: right;
+  text-align: right;
+  font-weight: bold;
+}
+.menu-slider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.menu-slider {
+  width: 120px;
+  accent-color: #ff4fa3;
+  vertical-align: middle;
+  margin-right: 0;
+  height: 2.5em;
+}
+.menu-slider-value {
+  font-size: 0.98em;
+  color: #ffffff;
+  font-weight: 500;
+  vertical-align: middle;
+  min-width: 32px;
+  text-align: right;
+}
+
+
+/* Switch in Darkmode Pink */
+.menu-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+}
+
+.menu-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.menu-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, #444, #222);
+  border-radius: 6px;
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.menu-switch-slider:before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background: linear-gradient(180deg, #fff, #ddd);
+  border-radius: 4px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.menu-switch input:checked + .menu-switch-slider {
+  background: linear-gradient(180deg, #ff4fa3, #d93682);
+  box-shadow: 0 0 8px rgba(255, 79, 163, 0.6);
+}
+
+.menu-switch input:checked + .menu-switch-slider:before {
+  transform: translateX(22px);
+  background: linear-gradient(180deg, #fff, #f8f8f8);
+}
+
+.menu-switch-slider:active:before {
+  width: 22px;
+}
+.menu-options-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.menu-options-arrow {
+  color: #e754a1;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 0 4px;
+  user-select: none;
+  transition: color 0.2s;
+}
+.menu-options-arrow:hover {
+  color: #ffe4f2;
+}
+.menu-options-value {
+  color: #ffe4f2;
+  font-weight: 500;
+  min-width: 48px;
+  text-align: center;
+  font-size: 1.05em;
+}
+.menu-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 320px;
+    max-width: 90vw;
+    background: rgba(25, 25, 25, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(255, 79, 163, 0.18);
+    color: #fff;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 24px 28px;
+    border: 1px solid #ff4fa3;
+    font-family: inherit;
+}
+.menu-popup-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ff4fa3;
+    text-align: left;
+    letter-spacing: 1px;
+}
+.menu-popup-text {
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(255, 79, 163, 0.08);
+    border-radius: 8px;
+    padding: 12px 10px;
+    margin-top: 0;
+    text-align: left;
+    line-height: 1.5;
+}
+.menu-popup-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    margin-top: 0;
+    color: #fff;
+    caret-color: #ff4fa3;
+}
