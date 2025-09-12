@@ -135,7 +135,7 @@ end
 
 local resFilters = {
     ["inventory"] = function(name)
-        return string.find(name, "_inv") or string.find(name, "inventory")
+        return string.find(name:lower(), "_inv") or string.find(name:lower(), "_inventory") or name:lower() == "inventory"
     end
 }
 
