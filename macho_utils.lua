@@ -92,7 +92,7 @@ function MachoUtils.InjectOnInjectable(code, resource, type)
     Citizen.CreateThread(function()
         repeat
             Citizen.Wait(100)
-        until MachoResourceInjectable("chat")
+        until MachoResourceInjectable(resource)
         if inject_type == 3 then Citizen.Wait(1000) end
 
         MachoInjectResource2(inject_type, resource, code)
